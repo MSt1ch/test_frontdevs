@@ -1,0 +1,92 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+	.container
+		padding: 0 15px
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+	.is-no-home
+		.product-card
+			flex-direction: column
+		.product-card__options
+			align-self: center
+			margin-top: 40px
+			& > div
+				margin-right: 30px	
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+	.menu-sort__wrap.menu-checkbox
+		flex-basis: auto
+		flex-direction: column
+		label
+			margin-bottom: 10px
+			margin-right: 0
+	.menu-sort__wrap.button-sort
+		flex-basis: auto
+	.is-no-home 
+		.product-list__header 
+			.product-list__decoration 
+				flex-basis: 80%	
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+	.menu-sort
+		flex-direction: column
+		justify-content: space-around
+		height: auto
+		flex-wrap: nowrap
+	.menu-sort__wrap.menu-checkbox
+		padding: 15px 0 
+
+	.menu-sort__wrap.button-sort
+		padding: 0 0 15px	
+		flex-basis: auto
+	.menu-sort__wrap label
+		margin: 0	
+		font-size: 14px
+	.checkbox-custom
+		margin-right: 10px
+	.is-no-home 
+		.product-list__header 
+			.product-list__decoration 
+				flex-basis: 70%
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+	
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
