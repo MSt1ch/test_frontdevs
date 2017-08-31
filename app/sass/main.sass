@@ -116,20 +116,20 @@ body
 	border-radius: 3px
 	z-index: 1
 
-.product-list._women.hidden
-	display: none
-.product-list._men.hidden
+.hidden
 	display: none
 
 .menu-sort__wrap.menu-checkbox
 	flex-basis: 77.78%
 	display: flex
 	justify-content: flex-start
+	label
+		cursor: pointer
 .menu-sort__wrap.button-sort
 	flex-basis: 22.22%
 	text-align: right
 
-	a
+	button.checkbox-button
 		text-align: center
 		border-radius: 3px
 		background-color: $accent
@@ -143,6 +143,7 @@ body
 		line-height: 52px
 		transition: all .25s ease
 		&:hover
+			cursor: pointer
 			border-color: $accent
 			color: $accent
 			background-color: transparent
@@ -169,14 +170,45 @@ body
 	text-transform: uppercase
 	font-size: 18px
 	color: $text
-	span
-		font-size: 14px
-		margin-left: 30px
+	position: relative
+	display: inline-block
+	.product__descr, .product__sort-button
+		display: inline-block
+	.product__sort-button
+		padding: 15px 20px 	
+		>span
+			font-size: 14px
+			margin-left: 15px
+			display: inline-block
+			&:hover
+				text-decoration: underline
+				cursor: pointer
 		i
 			font-size: 20px
 			display: inline
 			color: #000
-
+			&:hover
+				cursor: pointer
+				
+	.dropdown
+		position: absolute
+		top: 0
+		right: 0
+		padding: 15px 20px
+		background-color: #f5f6f7
+		border-radius: 3px
+		z-index: 20
+		i
+			padding: 0
+		.dropdown__item
+			color: $text
+			margin-bottom: 5px
+			display: inline-block
+			text-transform: uppercase
+			font-size: 14px
+			&:hover
+				text-decoration: underline
+				cursor: pointer
 .product-list
 	margin-top: 40px
 	position: relative
@@ -304,6 +336,8 @@ a
 			color: $text
 			text-transform: uppercase
 			display: inline-block
+			&:hover
+				text-decoration: underline
 		i
 			display: inline-block
 			margin-right: 30px	

@@ -81,6 +81,16 @@ $(function() {
 
 		 list.toggleClass('hidden')		
 	});
+
+	$('.product__sort-button > span, .product__sort-button > i').on('click', function(){
+		$('.dropdown').toggleClass('hidden')
+	})
+
+	$('.dropdown__item').on('click', function(){
+		
+		$('.product__sort-button > span').text($(this).text())
+		$('.dropdown').toggleClass('hidden')
+	})
 	
 
 	
