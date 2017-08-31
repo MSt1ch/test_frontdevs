@@ -67,7 +67,7 @@ $(function() {
 		$('.slider-counter._2').html(page+" / "+pages)
 	}
 
-	$('#women').on('click', function(){
+	$('#women').on('click', function women_list(){
 		var th = $(this);
 		var list = $('.product-list._women');
 		list.toggleClass('hidden')	
@@ -75,7 +75,7 @@ $(function() {
 		
 	});
 
-	$('#men').on('click', function(){
+	$('#men').on('click', function men_list(){
 		var th = $(this);
 		var list = $('.product-list._men');
 
@@ -93,5 +93,80 @@ $(function() {
 	})
 	
 
+	$('.dropdown__item._price').on('click', function(){
+		var list = $('.product-card-list._1')
+		var list2 = $('.product-card-list._2')
+
+		var sortlist = list.find('.product-card').sort(function (a, b) {
+		    return a.dataset.price - b.dataset.price;
+		})
+		for(var i=0; i<sortlist.length; i++){
+		($('.product-card-list._1 .owl-item')[i] ).append(sortlist[i]);
+		}
+
+		
+		var sortlist2 = list2.find('.product-card').sort(function (a, b) {
+		    return a.dataset.price - b.dataset.price;
+		})
+		for(var i=0; i<sortlist2.length; i++){
+		($('.product-card-list._2 .owl-item')[i] ).append(sortlist2[i]);
+		}
+	})
+
+
+	$('.dropdown__item._name').on('tap click', function(){
+		var list = $('.product-card-list._1')
+		var list2 = $('.product-card-list._2')
+		
+
+		var sortlist = list.find('.product-card').sort(function (a, b) {
+	    if (a.dataset.name > b.dataset.name) {
+		    return 1;
+		  }
+		  if (a.dataset.name < b.dataset.name) {
+		    return -1;
+		  }
+		  return 0;
+		})
+		for(var i=0; i<sortlist.length; i++){
+		($('.product-card-list._1 .owl-item')[i] ).append(sortlist[i]);
+		}
+
+		
+		var sortlist2 = list2.find('.product-card').sort(function (a, b) {
+	   	if (a.dataset.name > b.dataset.name) {
+		    return 1;
+		  }
+		  if (a.dataset.name < b.dataset.name) {
+		    return -1;
+		  }
+		  return 0;
+		})
+		for(var i=0; i<sortlist2.length; i++){
+		($('.product-card-list._2 .owl-item')[i] ).append(sortlist2[i]);
+		}
 	
+	})
+
+
+	$('.checkbox._all').on('click', function(event) {   
+    if(this.checked) {
+        // Iterate each checkbox
+        $(':checkbox').each(function() {
+            this.checked = true;                        
+        });
+        $('.product-list._women').removeClass('hidden')	
+    	$('.product-list._men').removeClass('hidden')
+    } else{
+    	$(':checkbox').each(function() {
+            this.checked = false;
+                         
+        });
+    	$('.product-list._women').toggleClass('hidden')	
+    	$('.product-list._men').toggleClass('hidden')	
+    }
+
+	});
+  
+
 });
