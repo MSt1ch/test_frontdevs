@@ -114,7 +114,7 @@ $(function() {
 	})
 
 
-	$('.dropdown__item._name').on('tap click', function(){
+	$('.dropdown__item._name').on('click', function(){
 		var list = $('.product-card-list._1')
 		var list2 = $('.product-card-list._2')
 		
