@@ -101,7 +101,7 @@ $(function() {
 		    return a.dataset.price - b.dataset.price;
 		})
 		for(var i=0; i<sortlist.length; i++){
-		($('.product-card-list._1 .owl-item')[i] ).append(sortlist[i]);
+		($('.product-card-list._1 .owl-item')[i] ).appendChild(sortlist[i]);
 		}
 
 		
@@ -109,7 +109,7 @@ $(function() {
 		    return a.dataset.price - b.dataset.price;
 		})
 		for(var i=0; i<sortlist2.length; i++){
-		($('.product-card-list._2 .owl-item')[i] ).append(sortlist2[i]);
+		($('.product-card-list._2 .owl-item')[i] ).appendChild(sortlist2[i]);
 		}
 	})
 
@@ -129,7 +129,7 @@ $(function() {
 		  return 0;
 		})
 		for(var i=0; i<sortlist.length; i++){
-		($('.product-card-list._1 .owl-item')[i] ).append(sortlist[i]);
+		($('.product-card-list._1 .owl-item')[i] ).appendChild(sortlist[i]);
 		}
 
 		
@@ -143,28 +143,21 @@ $(function() {
 		  return 0;
 		})
 		for(var i=0; i<sortlist2.length; i++){
-		($('.product-card-list._2 .owl-item')[i] ).append(sortlist2[i]);
+		($('.product-card-list._2 .owl-item')[i] ).appendChild(sortlist2[i]);
 		}
 	
 	})
 
 
 	$('.checkbox._all').on('click', function(event) {   
-    if(this.checked) {
+    if(this) {
         // Iterate each checkbox
         $(':checkbox').each(function() {
             this.checked = true;                        
         });
         $('.product-list._women').removeClass('hidden')	
     	$('.product-list._men').removeClass('hidden')
-    } else{
-    	$(':checkbox').each(function() {
-            this.checked = false;
-                         
-        });
-    	$('.product-list._women').toggleClass('hidden')	
-    	$('.product-list._men').toggleClass('hidden')	
-    }
+    } 
 
 	});
   
